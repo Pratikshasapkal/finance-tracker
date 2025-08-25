@@ -18,9 +18,6 @@ COPY . .
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Optimize Laravel
-RUN php artisan config:cache && php artisan route:cache && php artisan view:cache
-
 # Expose port
 EXPOSE 8080
 
